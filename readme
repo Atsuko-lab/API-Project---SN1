@@ -1,0 +1,143 @@
+📌 **Projet** : API REST - Assistant d'Éducation avec IA
+
+📢 **Assistant IA pour l'Éducation** 🚀
+
+🎯 **Objectif**
+Développer une API REST avec Django Rest Framework intégrant une IA pour aider les étudiants à mieux comprendre leurs cours, s’entraîner sur des exercices et poser des questions.
+
+📌 **Fonctionnalités principales** :
+✅ Résumé des cours
+✅ Explication de concepts
+✅ Génération d’exercices d’entraînement
+✅ Réponses aux questions des élèves
+
+
+###### Installation et configuration ######
+
+## Prérequis ##
+- Python 3.8+
+- Django & Django REST Framework
+- OpenAI API (pour l’IA)
+- Virtualenv (recommandé)
+
+L'API sera accessible à l'adresse : `http://127.0.0.1:8000/api/`
+
+---
+
+## Documentation des routes
+
+### 1️⃣ Accueil de l'API
+**Route :** ``http://127.0.0.1:8000/api/study/accueil/`
+
+📤 **Réponse attendue :**
+
+```json
+{
+  "message": "Bienvenue dans le service d'aide à l'élève! Tu peux accéder aux routes /resume, /explique, /entrainement et /question. Bon courage !"
+}
+```
+
+---
+
+### 2️⃣ Résumé de cours
+**Route :** `http://127.0.0.1:8000/api/study/resume/`
+
+📥 **Exemple de requête :**
+```json
+{
+    "cours": "L'intelligence artificielle est un domaine en pleine expansion qui vise à créer des machines capables de simuler l'intelligence humaine."
+}
+```
+
+📤 **Réponse attendue :**
+```json
+{
+    "Résume": "L'IA est un domaine en croissance qui cherche à créer des machines imitant l'intelligence humaine."
+}
+```
+
+---
+
+### 3️⃣ Explication d'un concept
+**Route :** `http://127.0.0.1:8000/api/study/explique/`
+
+📥 **Exemple de requête :**
+```json
+{
+    "idée": "Machine Learning",
+    "level": "débutant"
+}
+```
+
+📤 **Réponse attendue :**
+```json
+{
+    "Explication": "Le Machine Learning est une branche de l'IA où les ordinateurs apprennent à partir de données sans être explicitement programmés."
+}
+```
+
+---
+
+### 4️⃣ Quiz pour s'entrainer
+**Route :** `http://127.0.0.1:8000/api/study/quiz/`
+
+📥 **Exemple de requête :**
+```json
+{
+    "sujet": "Histoire de France",
+    "level": "intermédiaire"
+}
+```
+📤 **Réponse attendue :**
+```json
+{
+    "quiz": [
+        {
+            "question": "Quel roi de France a été surnommé 'le Roi Soleil' ?",
+            "options": ["Louis XIV", "Louis XVI", "Louis XV"]
+        },
+        {
+            "question": "Qui a mené la Révolution française de 1789?",
+            "options": ["Napoléon Bonaparte", "Marie-Antoinette", "Maximilien de Robespierre"]
+        },
+        {
+            "question": "Quel événement a marqué le début de la Deuxième Guerre mondiale en France en 1940 ?",
+            "options": ["L'armistice de juin", "La bataille de Verdun", "La bataille de la Marne"]
+        },
+        {
+            "question": "Quelle reine de France a été exécutée lors de la Révolution française ?",
+            "options": ["Catherine de Médicis", "Marie-Antoinette", "Anne d'Autriche"]
+        },
+        {
+            "question": "Quel édifice emblématique de Paris a été commencé à construire au 12ème siècle ?",
+            "options": ["La Tour Eiffel", "Le Louvre", "Notre-Dame de Paris"]
+        }
+    ]
+}
+```
+
+---
+
+### 5️⃣ Poser une question à l'IA
+**Route :** `http://127.0.0.1:8000/api/study/question/`
+
+📥 **Exemple de requête :**
+```json
+{
+    "question": "Qui a découvert la gravité ?"
+}
+```
+📤 **Réponse attendue :**
+```json
+{
+    "Réponse": "La gravité a été découverte par Isaac Newton lorsqu'il a observé une pomme tomber d'un arbre."
+}
+```
+
+---
+
+
+
+---
+
+🚀 **Bon développement !**
